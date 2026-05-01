@@ -21,12 +21,12 @@ const iconPaths = {
 <template>
     <Head>
         <title>{{ page?.meta_title || page?.title || 'Special discounts' }}</title>
-        <meta name="description" :content="page?.meta_description || page?.intro || 'Exclusive discount programs at Fone Fitness — for the people who keep our community moving.'" />
+        <meta name="description" :content="page?.meta_description || page?.intro || 'Exclusive discount programs at Ulverston Mobile — for the people who keep our community moving.'" />
     </Head>
 
     <section class="bg-ink-50">
         <div class="container-fluid py-24 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">{{ page?.eyebrow || 'For our community' }}</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ page?.eyebrow || 'For our community' }}</p>
             <h1 class="mt-3 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'Special discounts.' }}</h1>
             <p class="mt-6 max-w-2xl mx-auto text-lg text-ink-500">
                 {{ page?.intro || 'We value the dedication of those who serve our community. Show your eligibility in store and we’ll take care of the rest.' }}

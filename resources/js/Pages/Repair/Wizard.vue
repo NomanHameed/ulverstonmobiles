@@ -84,7 +84,7 @@ const progress = computed(() => Math.round(((step.value - 1) / (STEPS.length - 1
 
     <div class="bg-ink-50">
         <div class="container-fluid pt-16 pb-12 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">Service</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Service</p>
             <h1 class="mt-3 text-5xl sm:text-6xl font-semibold tracking-tightest">Book a precision repair.</h1>
             <p class="mt-4 text-base text-ink-500 max-w-xl mx-auto">
                 Tell us about your device. Most repairs are completed in under 60 minutes with OEM-grade parts.

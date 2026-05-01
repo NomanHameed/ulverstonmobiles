@@ -28,9 +28,11 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Fone Fitness')
+            ->brandName('Ulverston Mobile')
+            ->brandLogo(asset('img/logo.png'))
+            ->brandLogoHeight('2.25rem')
             ->colors([
-                'primary' => Color::Neutral,
+                'primary' => Color::hex('#1e0fb7'),
                 'gray'    => Color::Neutral,
             ])
             ->font('Inter')

@@ -43,7 +43,7 @@ function clearFilters() {
 
     <div class="container-fluid pt-12 pb-24">
         <header class="mb-12">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">Catalog</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Catalog</p>
             <h1 class="mt-3 text-5xl sm:text-6xl font-semibold tracking-tightest">All devices.</h1>
             <p class="mt-3 text-base text-ink-500 max-w-xl">Authentic. Certified. Ready to ship — or pick up at the storefront.</p>
         </header>

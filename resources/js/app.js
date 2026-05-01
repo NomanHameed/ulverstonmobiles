@@ -6,7 +6,7 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from 'ziggy-js';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Fone Fitness';
+const appName = import.meta.env.VITE_APP_NAME || 'Ulverston Mobile';
 
 createInertiaApp({
     title: (title) => (title ? `${title} — ${appName}` : appName),
@@ -22,7 +22,7 @@ createInertiaApp({
             .mount(el);
     },
     progress: {
-        color: '#0a0a0a',
+        color: '#1e0fb7',
         showSpinner: false,
     },
 });

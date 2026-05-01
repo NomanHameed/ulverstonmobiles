@@ -9,7 +9,7 @@ const menuOpen = ref(false);
 const mobileOpen = ref(false);
 
 const categories = computed(() => page.props.menuCategories ?? []);
-const appName = computed(() => page.props.app?.name ?? 'Fone Fitness');
+const appName = computed(() => page.props.app?.name ?? 'Ulverston Mobile');
 
 function handleScroll() {
     scrolled.value = window.scrollY > 8;
@@ -35,9 +35,8 @@ onBeforeUnmount(() => {
     >
         <div class="container-fluid">
             <nav class="flex h-16 items-center justify-between gap-6">
-                <Link href="/" class="flex items-center gap-2 font-display tracking-tight font-semibold text-lg">
-                    <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink-900 text-white text-xs font-bold">F</span>
-                    {{ appName }}
+                <Link href="/" :aria-label="appName" class="flex items-center">
+                    <img src="/img/logo.png" :alt="appName" class="h-9 sm:h-10 w-auto" />
                 </Link>
 
                 <div class="hidden md:flex items-center gap-1">

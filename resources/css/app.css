@@ -25,10 +25,18 @@
 
     .btn {
         @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium
-               transition duration-300 ease-apple focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900;
+               transition duration-300 ease-apple focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-600;
     }
 
     .btn-primary {
+        @apply btn bg-brand-blue-600 text-white hover:bg-brand-blue-700;
+    }
+
+    .btn-accent {
+        @apply btn bg-brand-orange-500 text-white hover:bg-brand-orange-600;
+    }
+
+    .btn-dark {
         @apply btn bg-ink-900 text-white hover:bg-ink-700;
     }
 
@@ -37,6 +45,6 @@
     }
 
     .btn-outline {
-        @apply btn border border-ink-200 text-ink-900 hover:border-ink-900;
+        @apply btn border border-ink-200 text-ink-900 hover:border-brand-blue-600 hover:text-brand-blue-600;
     }
 }

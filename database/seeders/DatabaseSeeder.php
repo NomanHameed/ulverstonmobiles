@@ -10,10 +10,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        User::where('email', 'admin@fonefitness.test')->delete();
+
         User::updateOrCreate(
-            ['email' => 'admin@fonefitness.test'],
+            ['email' => 'admin@ulverstonmobile.test'],
             [
-                'name'     => 'Fone Fitness Admin',
+                'name'     => 'Ulverston Mobile Admin',
                 'password' => Hash::make('password'),
             ],
         );

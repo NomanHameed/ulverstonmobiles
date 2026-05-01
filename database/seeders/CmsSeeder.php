@@ -67,14 +67,14 @@ class CmsSeeder extends Seeder
         );
 
         $settings = [
-            ['key' => 'company.email',        'group' => 'contact', 'type' => 'string', 'value' => 'hello@fonefitness.com',  'label' => 'Contact email'],
+            ['key' => 'company.email',        'group' => 'contact', 'type' => 'string', 'value' => 'hello@ulverstonmobile.co.uk', 'label' => 'Contact email'],
             ['key' => 'company.phone',        'group' => 'contact', 'type' => 'string', 'value' => '+1 (555) 010-0199',     'label' => 'Phone'],
             ['key' => 'company.whatsapp',     'group' => 'contact', 'type' => 'string', 'value' => '+15550100199',          'label' => 'WhatsApp number (digits only)'],
             ['key' => 'company.address',      'group' => 'contact', 'type' => 'string', 'value' => '142 Pine Street, Suite 4', 'label' => 'Storefront address'],
-            ['key' => 'social.instagram',     'group' => 'social',  'type' => 'string', 'value' => 'https://instagram.com/fonefitness'],
-            ['key' => 'social.tiktok',        'group' => 'social',  'type' => 'string', 'value' => 'https://tiktok.com/@fonefitness'],
-            ['key' => 'seo.site_title',       'group' => 'seo',     'type' => 'string', 'value' => 'Fone Fitness — Premium devices & precision repair'],
-            ['key' => 'seo.site_description', 'group' => 'seo',     'type' => 'string', 'value' => 'Authentic devices and certified repairs for iPhone, Samsung Galaxy, and Pixel. Same-day service. Genuine parts.'],
+            ['key' => 'social.instagram',     'group' => 'social',  'type' => 'string', 'value' => 'https://instagram.com/ulverstonmobile'],
+            ['key' => 'social.tiktok',        'group' => 'social',  'type' => 'string', 'value' => 'https://tiktok.com/@ulverstonmobile'],
+            ['key' => 'seo.site_title',       'group' => 'seo',     'type' => 'string', 'value' => 'Ulverston Mobile — Repair, restore, replace'],
+            ['key' => 'seo.site_description', 'group' => 'seo',     'type' => 'string', 'value' => 'Precision phone repair from certified technicians, plus authentic devices for your next upgrade. Same-day service. Genuine parts. 12-month warranty.'],
         ];
 
         foreach ($settings as $s) {

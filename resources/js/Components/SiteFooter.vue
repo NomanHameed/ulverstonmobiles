@@ -5,7 +5,7 @@ import { Link, usePage } from '@inertiajs/vue3';
 const page = usePage();
 const site = computed(() => page.props.site ?? {});
 const categories = computed(() => page.props.menuCategories ?? []);
-const appName = computed(() => page.props.app?.name ?? 'Fone Fitness');
+const appName = computed(() => page.props.app?.name ?? 'Ulverston Mobile');
 const year = new Date().getFullYear();
 </script>
 
@@ -13,12 +13,11 @@ const year = new Date().getFullYear();
     <footer class="border-t border-ink-100 bg-white mt-24">
         <div class="container-fluid py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="col-span-2 md:col-span-1">
-                <Link href="/" class="flex items-center gap-2 font-display tracking-tight font-semibold text-lg">
-                    <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink-900 text-white text-xs font-bold">F</span>
-                    {{ appName }}
+                <Link href="/" :aria-label="appName" class="inline-flex items-center">
+                    <img src="/img/logo.png" :alt="appName" class="h-10 w-auto" />
                 </Link>
                 <p class="mt-4 text-sm text-ink-500 max-w-sm">
-                    Premium devices and certified repair, with the precision of a service department and the polish of a flagship store.
+                    Precision phone repair and authentic devices, with the polish of a flagship store and the discipline of a service department.
                 </p>
             </div>
 
@@ -60,8 +59,8 @@ const year = new Date().getFullYear();
 
         <div class="border-t border-ink-100">
             <div class="container-fluid py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ink-400">
-                <p>© {{ year }} {{ appName }}. All rights reserved.</p>
-                <p>Premium devices · Precision repair</p>
+                <p>© {{ year }} Elitefone Services Ltd. All rights reserved.</p>
+                <p>Precision repair · Authentic devices</p>
             </div>
         </div>
     </footer>

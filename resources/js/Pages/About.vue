@@ -18,8 +18,8 @@ defineProps({
 
     <section class="bg-ink-50">
         <div class="container-fluid py-24 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">{{ page?.eyebrow || 'Our story' }}</p>
-            <h1 class="mt-3 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'About Fone Fitness' }}</h1>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ page?.eyebrow || 'Our story' }}</p>
+            <h1 class="mt-3 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'About Ulverston Mobile' }}</h1>
             <p v-if="page?.intro" class="mt-6 max-w-2xl mx-auto text-lg text-ink-500">{{ page.intro }}</p>
         </div>
     </section>
@@ -32,8 +32,8 @@ defineProps({
         />
         <div v-else class="max-w-3xl mx-auto space-y-6 text-base text-ink-700 leading-relaxed">
             <p>
-                Fone Fitness is a destination for the modern phone enthusiast — a place where authenticity, craftsmanship and care meet. We
-                stock the latest devices from the brands that matter, and we service them with the precision of a flagship workshop.
+                Ulverston Mobile is the home of precision phone repair on the Cumbrian coast — a place where authenticity, craftsmanship and care meet. We
+                service every major brand with the discipline of a manufacturer's workshop, and we stock authentic devices for those upgrading to their next.
             </p>
             <p>
                 Whether you're upgrading to the newest flagship or restoring a beloved daily driver, every interaction is handled by certified
@@ -47,7 +47,7 @@ defineProps({
     </section>
 
     <section v-if="gallery.length" class="container-fluid pb-24">
-        <p class="text-xs uppercase tracking-[0.3em] text-ink-400 text-center">Inside the store</p>
+        <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 text-center">Inside the store</p>
         <h2 class="mt-3 text-center text-4xl sm:text-5xl font-semibold tracking-tightest">Gallery</h2>
 
         <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

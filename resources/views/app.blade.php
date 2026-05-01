@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-        <meta name="theme-color" content="#0a0a0a">
+        <meta name="theme-color" content="#1e0fb7">
+        <link rel="icon" type="image/png" href="/img/logo.png">
 
-        <title inertia>{{ config('app.name', 'Fone Fitness') }}</title>
+        <title inertia>{{ config('app.name', 'Ulverston Mobile') }}</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -43,12 +43,12 @@ const whatsappLink = computed(() => {
 <template>
     <Head>
         <title>{{ page?.meta_title || page?.title || 'Contact' }}</title>
-        <meta name="description" :content="page?.meta_description || page?.intro || 'Get in touch with the Fone Fitness team.'" />
+        <meta name="description" :content="page?.meta_description || page?.intro || 'Get in touch with the Ulverston Mobile team.'" />
     </Head>
 
     <section class="bg-ink-50">
         <div class="container-fluid py-24 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">{{ page?.eyebrow || 'Reach the team' }}</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ page?.eyebrow || 'Reach the team' }}</p>
             <h1 class="mt-3 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'Contact us' }}</h1>
             <p class="mt-6 max-w-xl mx-auto text-base text-ink-500">
                 {{ page?.intro || 'We love hearing from our customers. Reach out and we’ll respond within one business day.' }}

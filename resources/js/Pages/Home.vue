@@ -34,10 +34,10 @@ const mapsEmbed = computed(() => {
 
 <template>
     <Head>
-        <title>Premium devices. Precision repair.</title>
+        <title>Ulverston Mobile — Repair, restore, replace.</title>
         <meta
             name="description"
-            content="Authentic devices and certified repairs for iPhone, Samsung Galaxy and Pixel. Same-day service. Genuine parts."
+            content="Precision phone repair from certified technicians, plus authentic devices for your next upgrade. Same-day service. Genuine parts. 12-month warranty."
         />
     </Head>
 
@@ -45,7 +45,7 @@ const mapsEmbed = computed(() => {
 
     <!-- Trusted By -->
     <section v-if="brands.length" class="container-fluid py-20 border-b border-ink-100">
-        <p class="text-center text-xs uppercase tracking-[0.3em] text-ink-400">Trusted by the brands you trust</p>
+        <p class="text-center text-xs uppercase tracking-[0.3em] text-brand-orange-500">Trusted by the brands you trust</p>
         <div class="mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-8 items-center">
             <div
                 v-for="b in brands"
@@ -85,7 +85,7 @@ const mapsEmbed = computed(() => {
 
             <div class="rounded-3xl border border-ink-100 p-10 lg:p-14 flex flex-col justify-between">
                 <div>
-                    <p class="text-xs uppercase tracking-[0.3em] text-ink-400">Save the wait</p>
+                    <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Save the wait</p>
                     <h3 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tightest">
                         Most repairs in 30–60 minutes.
                     </h3>
@@ -122,13 +122,13 @@ const mapsEmbed = computed(() => {
         <section
             v-for="(s, i) in spotlights"
             :key="s.id"
-            :class="['py-32', i % 2 === 0 ? 'bg-ink-950 text-white' : 'bg-white text-ink-900']"
+            :class="['py-32', i % 2 === 0 ? 'bg-brand-blue-700 text-white' : 'bg-white text-ink-900']"
         >
             <div class="container-fluid grid lg:grid-cols-2 gap-16 items-center">
                 <div :class="i % 2 === 0 ? 'lg:order-1' : 'lg:order-2'">
                     <p
                         class="text-xs uppercase tracking-[0.3em]"
-                        :class="i % 2 === 0 ? 'text-ink-300' : 'text-ink-400'"
+                        :class="i % 2 === 0 ? 'text-brand-orange-300' : 'text-brand-orange-500'"
                     >
                         Spotlight · {{ s.brand_name }}
                     </p>
@@ -171,14 +171,13 @@ const mapsEmbed = computed(() => {
                         <Link
                             :href="`/products/${s.slug}`"
                             class="btn"
-                            :class="i % 2 === 0 ? 'bg-white text-ink-900 hover:bg-ink-100' : 'bg-ink-900 text-white hover:bg-ink-800'"
+                            :class="i % 2 === 0 ? 'bg-white text-brand-blue-700 hover:bg-brand-blue-50' : 'bg-brand-blue-600 text-white hover:bg-brand-blue-700'"
                         >
                             View details
                         </Link>
                         <Link
                             :href="`/products/${s.slug}#inquire`"
-                            class="btn"
-                            :class="i % 2 === 0 ? 'border border-white/30 text-white hover:bg-white/10' : 'border border-ink-200 text-ink-900 hover:bg-ink-50'"
+                            class="btn-accent"
                         >
                             Inquire
                         </Link>
@@ -215,10 +214,10 @@ const mapsEmbed = computed(() => {
     <section v-if="featured.length" class="container-fluid py-24">
         <div class="flex items-end justify-between mb-10">
             <div>
-                <p class="text-xs uppercase tracking-[0.3em] text-ink-400">Hot products</p>
+                <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Hot products</p>
                 <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">Curated for the everyday extraordinary.</h2>
             </div>
-            <Link href="/products" class="hidden sm:inline-flex text-sm font-medium text-ink-700 hover:text-ink-900 transition">
+            <Link href="/products" class="hidden sm:inline-flex text-sm font-medium text-brand-orange-600 hover:text-brand-orange-700 transition">
                 Shop all →
             </Link>
         </div>
@@ -230,7 +229,7 @@ const mapsEmbed = computed(() => {
     <!-- Repair gallery -->
     <section v-if="repairGallery.length" class="container-fluid py-24 border-t border-ink-100">
         <div class="text-center max-w-2xl mx-auto">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">Repair workshop</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Repair workshop</p>
             <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">A precision bench, for every device.</h2>
             <p class="mt-5 text-ink-500">
                 From cracked screens to deep board-level work, every repair runs through a dedicated bench, calibrated tools, and certified technicians.
@@ -257,14 +256,14 @@ const mapsEmbed = computed(() => {
             </figure>
         </div>
         <div class="mt-10 text-center">
-            <Link href="/repair" class="btn-outline">Book a repair</Link>
+            <Link href="/repair" class="btn-accent">Book a repair</Link>
         </div>
     </section>
 
     <!-- Store gallery -->
     <section v-if="storeGallery.length" class="container-fluid py-24">
         <div class="text-center max-w-2xl mx-auto">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">Store gallery</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Store gallery</p>
             <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">Step inside.</h2>
             <p class="mt-5 text-ink-500">
                 A considered space, designed for an unhurried look at the device that's right for you.
@@ -322,10 +321,10 @@ const mapsEmbed = computed(() => {
     <!-- About blurb -->
     <section v-if="about" class="bg-ink-50 py-24">
         <div class="container-fluid max-w-3xl text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400">{{ about.eyebrow || 'About us' }}</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ about.eyebrow || 'About us' }}</p>
             <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tightest">{{ about.title }}</h2>
             <p v-if="about.intro" class="mt-6 text-lg text-ink-600">{{ about.intro }}</p>
-            <Link href="/about" class="btn-outline mt-8 inline-flex">Read our story</Link>
+            <Link href="/about" class="btn-accent mt-8 inline-flex">Read our story</Link>
         </div>
     </section>
 
@@ -334,7 +333,7 @@ const mapsEmbed = computed(() => {
         <div class="grid lg:grid-cols-2 gap-10 items-stretch">
             <div class="rounded-3xl border border-ink-100 p-10 lg:p-14 flex flex-col justify-between">
                 <div>
-                    <p class="text-xs uppercase tracking-[0.3em] text-ink-400">Quick support</p>
+                    <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Quick support</p>
                     <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tightest">Visit, call, or message.</h2>
                     <p class="mt-5 text-ink-500">
                         Drop in for a hands-on look, or reach out and a real person will respond — usually within a few hours.
@@ -367,7 +366,7 @@ const mapsEmbed = computed(() => {
                         :href="`https://wa.me/${site.whatsapp.replace(/\D/g, '')}`"
                         target="_blank"
                         rel="noopener"
-                        class="btn-outline"
+                        class="btn-accent"
                     >
                         Chat on WhatsApp
                     </a>

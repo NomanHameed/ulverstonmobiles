@@ -113,7 +113,7 @@ const stockText = computed(() => {
             </div>
 
             <div>
-                <p class="text-xs uppercase tracking-[0.3em] text-ink-400">{{ product.brand?.name }}</p>
+                <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ product.brand?.name }}</p>
                 <h1 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">{{ product.name }}</h1>
                 <p v-if="product.short_description" class="mt-4 text-lg text-ink-500">{{ product.short_description }}</p>
 
@@ -175,7 +175,7 @@ const stockText = computed(() => {
         </div>
 
         <section v-if="product.features.length" class="mt-32">
-            <p class="text-xs uppercase tracking-[0.3em] text-ink-400 text-center">Features</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 text-center">Features</p>
             <h2 class="mt-3 text-center text-4xl sm:text-5xl font-semibold tracking-tightest">Engineered for the way you live.</h2>
 
             <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
