@@ -72,10 +72,6 @@ function submit() {
     });
 }
 
-function formatPrice(value) {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
-}
-
 const progress = computed(() => Math.round(((step.value - 1) / (STEPS.length - 1)) * 100));
 </script>
 
@@ -107,7 +103,7 @@ const progress = computed(() => Math.round(((step.value - 1) / (STEPS.length - 1
                             <span
                                 :class="[
                                     'h-7 w-7 rounded-full inline-flex items-center justify-center text-xs font-semibold transition',
-                                    step > s.id ? 'bg-ink-900 text-white' : (step === s.id ? 'bg-ink-900 text-white ring-4 ring-ink-200' : 'bg-ink-100 text-ink-400'),
+                                    step > s.id ? 'bg-brand-orange-500 text-white' : (step === s.id ? 'bg-brand-blue-600 text-white ring-4 ring-brand-orange-200' : 'bg-ink-100 text-ink-400'),
                                 ]"
                             >
                                 <svg v-if="step > s.id" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -123,7 +119,7 @@ const progress = computed(() => Math.round(((step.value - 1) / (STEPS.length - 1
                     </li>
                 </ol>
                 <div class="sm:hidden mt-4 h-1 rounded-full bg-ink-100 overflow-hidden">
-                    <div class="h-full bg-ink-900 transition-all duration-500 ease-apple" :style="{ width: `${progress}%` }"></div>
+                    <div class="h-full bg-gradient-to-r from-brand-blue-600 to-brand-orange-500 transition-all duration-500 ease-apple" :style="{ width: `${progress}%` }"></div>
                 </div>
             </div>
 
@@ -207,9 +203,8 @@ const progress = computed(() => Math.round(((step.value - 1) / (STEPS.length - 1
                                     <p class="text-sm font-semibold tracking-tight">{{ issue.name }}</p>
                                     <p v-if="issue.description" class="mt-1 text-xs text-ink-500 line-clamp-2">{{ issue.description }}</p>
                                 </div>
-                                <div v-if="issue.base_price" class="text-right">
-                                    <p class="text-sm font-semibold">from {{ formatPrice(issue.base_price) }}</p>
-                                    <p v-if="issue.estimated_minutes" class="text-xs text-ink-400">~{{ issue.estimated_minutes }} min</p>
+                                <div v-if="issue.estimated_minutes" class="text-right">
+                                    <p class="text-xs text-ink-400">~{{ issue.estimated_minutes }} min</p>
                                 </div>
                             </div>
                         </button>
@@ -226,7 +221,7 @@ const progress = computed(() => Math.round(((step.value - 1) / (STEPS.length - 1
                         <div class="text-xs uppercase tracking-[0.2em] text-ink-400 flex-shrink-0">Booking</div>
                         <div class="text-sm">
                             <p class="font-semibold">{{ selectedBrand?.name }} {{ selectedModel?.name }}</p>
-                            <p class="text-ink-500">{{ selectedIssue?.name }}<span v-if="selectedIssue?.base_price"> — from {{ formatPrice(selectedIssue.base_price) }}</span></p>
+                            <p class="text-ink-500">{{ selectedIssue?.name }}</p>
                         </div>
                     </div>
 
@@ -252,7 +247,7 @@ const progress = computed(() => Math.round(((step.value - 1) / (STEPS.length - 1
                             <div class="mt-2 grid grid-cols-3 gap-2">
                                 <label v-for="opt in ['whatsapp','phone','email']" :key="opt">
                                     <input type="radio" v-model="form.preferred_contact" :value="opt" class="peer sr-only" />
-                                    <span class="block text-center py-2 px-3 rounded-xl border border-ink-200 text-xs uppercase tracking-[0.15em] cursor-pointer peer-checked:bg-ink-900 peer-checked:text-white peer-checked:border-ink-900 transition">
+                                    <span class="block text-center py-2 px-3 rounded-xl border border-ink-200 text-xs uppercase tracking-[0.15em] cursor-pointer peer-checked:bg-brand-blue-600 peer-checked:text-white peer-checked:border-brand-blue-600 transition">
                                         {{ opt }}
                                     </span>
                                 </label>

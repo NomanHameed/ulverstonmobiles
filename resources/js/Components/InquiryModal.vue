@@ -61,7 +61,7 @@ const whatsappLink = computed(() => {
         leave-from-class="opacity-100"
         leave-to-class="opacity-0"
     >
-        <div v-if="open" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" @click.self="emit('close')">
+        <div v-if="open" class="fixed inset-0 z-50 bg-brand-blue-950/60 backdrop-blur-sm" @click.self="emit('close')">
             <Transition
                 enter-active-class="transition ease-apple duration-400"
                 enter-from-class="opacity-0 translate-y-8"
@@ -119,7 +119,7 @@ const whatsappLink = computed(() => {
                                 <div class="mt-2 flex gap-2">
                                     <label v-for="opt in ['whatsapp','phone','email']" :key="opt" class="flex-1">
                                         <input type="radio" v-model="form.preferred_contact" :value="opt" class="peer sr-only" />
-                                        <span class="block text-center py-2 px-3 rounded-xl border border-ink-200 text-xs uppercase tracking-[0.15em] cursor-pointer peer-checked:bg-ink-900 peer-checked:text-white peer-checked:border-ink-900 transition">
+                                        <span class="block text-center py-2 px-3 rounded-xl border border-ink-200 text-xs uppercase tracking-[0.15em] cursor-pointer peer-checked:bg-brand-blue-600 peer-checked:text-white peer-checked:border-brand-blue-600 transition">
                                             {{ opt }}
                                         </span>
                                     </label>

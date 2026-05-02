@@ -24,11 +24,14 @@ const iconPaths = {
         <meta name="description" :content="page?.meta_description || page?.intro || 'Exclusive discount programs at Ulverston Mobile — for the people who keep our community moving.'" />
     </Head>
 
-    <section class="bg-ink-50">
-        <div class="container-fluid py-24 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ page?.eyebrow || 'For our community' }}</p>
-            <h1 class="mt-3 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'Special discounts.' }}</h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg text-ink-500">
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-blue-50 via-white to-brand-orange-50">
+        <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-orange-200/40 blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-blue-200/50 blur-3xl"></div>
+        <div class="container-fluid relative py-24 text-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">{{ page?.eyebrow || 'For our community' }}</p>
+            <span class="block mx-auto mt-4 accent-rule"></span>
+            <h1 class="mt-5 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'Special discounts.' }}</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-ink-600">
                 {{ page?.intro || 'We value the dedication of those who serve our community. Show your eligibility in store and we’ll take care of the rest.' }}
             </p>
         </div>
@@ -41,7 +44,7 @@ const iconPaths = {
                 :key="program.id"
                 class="rounded-3xl border border-ink-100 hover:border-ink-300 transition p-8 flex flex-col"
             >
-                <div class="h-12 w-12 rounded-2xl bg-ink-50 flex items-center justify-center text-ink-700">
+                <div class="h-12 w-12 rounded-2xl bg-brand-orange-50 text-brand-orange-600 flex items-center justify-center">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <path :d="iconPaths[program.icon] || iconPaths.star" />
                     </svg>
@@ -59,13 +62,17 @@ const iconPaths = {
             <p class="text-base text-ink-500">No discount programs are currently active.</p>
         </div>
 
-        <div class="mt-20 mx-auto max-w-3xl rounded-3xl bg-ink-950 text-white p-10 text-center">
-            <p class="text-xs uppercase tracking-[0.25em] text-ink-300">Have something else?</p>
-            <h3 class="mt-3 text-3xl font-semibold tracking-tight">Bulk orders & corporate accounts.</h3>
-            <p class="mt-3 text-sm text-ink-300 max-w-xl mx-auto">
-                Outfitting a team or stocking a fleet of devices? We offer dedicated pricing and account support. Reach out and we’ll tailor a quote.
-            </p>
-            <Link href="/contact" class="btn bg-white text-ink-900 hover:bg-ink-100 mt-6">Get in touch</Link>
+        <div class="relative overflow-hidden mt-20 mx-auto max-w-3xl rounded-3xl surface-deep p-10 text-center">
+            <div class="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-brand-orange-500/30 blur-3xl"></div>
+            <div class="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-brand-orange-400/15 blur-3xl"></div>
+            <div class="relative">
+                <p class="text-xs uppercase tracking-[0.25em] text-brand-orange-300 font-semibold">Have something else?</p>
+                <h3 class="mt-3 text-3xl font-semibold tracking-tight">Bulk orders & corporate accounts.</h3>
+                <p class="mt-3 text-sm text-white/80 max-w-xl mx-auto">
+                    Outfitting a team or stocking a fleet of devices? We offer dedicated pricing and account support. Reach out and we’ll tailor a quote.
+                </p>
+                <Link href="/contact" class="btn-accent mt-6">Get in touch</Link>
+            </div>
         </div>
     </section>
 </template>

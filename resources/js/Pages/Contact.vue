@@ -46,11 +46,14 @@ const whatsappLink = computed(() => {
         <meta name="description" :content="page?.meta_description || page?.intro || 'Get in touch with the Ulverston Mobile team.'" />
     </Head>
 
-    <section class="bg-ink-50">
-        <div class="container-fluid py-24 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ page?.eyebrow || 'Reach the team' }}</p>
-            <h1 class="mt-3 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'Contact us' }}</h1>
-            <p class="mt-6 max-w-xl mx-auto text-base text-ink-500">
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-blue-50 via-white to-brand-orange-50">
+        <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-orange-200/40 blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-blue-200/50 blur-3xl"></div>
+        <div class="container-fluid relative py-24 text-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">{{ page?.eyebrow || 'Reach the team' }}</p>
+            <span class="block mx-auto mt-4 accent-rule"></span>
+            <h1 class="mt-5 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'Contact us' }}</h1>
+            <p class="mt-6 max-w-xl mx-auto text-base text-ink-600">
                 {{ page?.intro || 'We love hearing from our customers. Reach out and we’ll respond within one business day.' }}
             </p>
         </div>
@@ -100,7 +103,7 @@ const whatsappLink = computed(() => {
                         <div class="mt-2 grid grid-cols-3 gap-2">
                             <label v-for="opt in ['whatsapp','phone','email']" :key="opt">
                                 <input type="radio" v-model="form.preferred_contact" :value="opt" class="peer sr-only" />
-                                <span class="block text-center py-2 px-3 rounded-xl border border-ink-200 text-xs uppercase tracking-[0.15em] cursor-pointer peer-checked:bg-ink-900 peer-checked:text-white peer-checked:border-ink-900 transition">
+                                <span class="block text-center py-2 px-3 rounded-xl border border-ink-200 text-xs uppercase tracking-[0.15em] cursor-pointer peer-checked:bg-brand-blue-600 peer-checked:text-white peer-checked:border-brand-blue-600 transition">
                                     {{ opt }}
                                 </span>
                             </label>
@@ -120,30 +123,33 @@ const whatsappLink = computed(() => {
             </div>
 
             <aside class="lg:col-span-2 space-y-6">
-                <section class="rounded-3xl bg-ink-900 text-white p-8">
-                    <p class="text-xs uppercase tracking-[0.25em] text-ink-300">Store information</p>
-                    <ul class="mt-6 space-y-5 text-sm">
-                        <li v-if="site.email">
-                            <p class="text-xs uppercase tracking-[0.2em] text-ink-300">Email</p>
-                            <a :href="`mailto:${site.email}`" class="mt-1 block hover:opacity-80">{{ site.email }}</a>
-                        </li>
-                        <li v-if="site.phone">
-                            <p class="text-xs uppercase tracking-[0.2em] text-ink-300">Sales & support</p>
-                            <a :href="`tel:${site.phone}`" class="mt-1 block hover:opacity-80">{{ site.phone }}</a>
-                        </li>
-                        <li v-if="site.whatsapp">
-                            <p class="text-xs uppercase tracking-[0.2em] text-ink-300">WhatsApp</p>
-                            <a :href="whatsappLink" target="_blank" rel="noopener" class="mt-1 block hover:opacity-80">{{ site.whatsapp }}</a>
-                        </li>
-                        <li v-if="site.address">
-                            <p class="text-xs uppercase tracking-[0.2em] text-ink-300">Storefront</p>
-                            <p class="mt-1">{{ site.address }}</p>
-                        </li>
-                        <li v-if="site.hours">
-                            <p class="text-xs uppercase tracking-[0.2em] text-ink-300">Opening hours</p>
-                            <p class="mt-1 whitespace-pre-line">{{ site.hours }}</p>
-                        </li>
-                    </ul>
+                <section class="relative overflow-hidden rounded-3xl surface-deep p-8">
+                    <div class="absolute -top-16 -right-12 h-48 w-48 rounded-full bg-brand-orange-500/30 blur-3xl"></div>
+                    <div class="relative">
+                        <p class="text-xs uppercase tracking-[0.25em] text-brand-orange-300 font-semibold">Store information</p>
+                        <ul class="mt-6 space-y-5 text-sm">
+                            <li v-if="site.email">
+                                <p class="text-xs uppercase tracking-[0.2em] text-brand-orange-300">Email</p>
+                                <a :href="`mailto:${site.email}`" class="mt-1 block hover:text-brand-orange-200 transition">{{ site.email }}</a>
+                            </li>
+                            <li v-if="site.phone">
+                                <p class="text-xs uppercase tracking-[0.2em] text-brand-orange-300">Sales & support</p>
+                                <a :href="`tel:${site.phone}`" class="mt-1 block hover:text-brand-orange-200 transition">{{ site.phone }}</a>
+                            </li>
+                            <li v-if="site.whatsapp">
+                                <p class="text-xs uppercase tracking-[0.2em] text-brand-orange-300">WhatsApp</p>
+                                <a :href="whatsappLink" target="_blank" rel="noopener" class="mt-1 block hover:text-brand-orange-200 transition">{{ site.whatsapp }}</a>
+                            </li>
+                            <li v-if="site.address">
+                                <p class="text-xs uppercase tracking-[0.2em] text-brand-orange-300">Storefront</p>
+                                <p class="mt-1">{{ site.address }}</p>
+                            </li>
+                            <li v-if="site.hours">
+                                <p class="text-xs uppercase tracking-[0.2em] text-brand-orange-300">Opening hours</p>
+                                <p class="mt-1 whitespace-pre-line">{{ site.hours }}</p>
+                            </li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="rounded-3xl border border-ink-100 p-8 text-center">

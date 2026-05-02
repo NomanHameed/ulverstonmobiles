@@ -16,11 +16,14 @@ defineProps({
         <meta name="description" :content="page?.meta_description || page?.intro || ''" />
     </Head>
 
-    <section class="bg-ink-50">
-        <div class="container-fluid py-24 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ page?.eyebrow || 'Our story' }}</p>
-            <h1 class="mt-3 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'About Ulverston Mobile' }}</h1>
-            <p v-if="page?.intro" class="mt-6 max-w-2xl mx-auto text-lg text-ink-500">{{ page.intro }}</p>
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-blue-50 via-white to-brand-orange-50">
+        <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-orange-200/40 blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-blue-200/50 blur-3xl"></div>
+        <div class="container-fluid relative py-24 text-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">{{ page?.eyebrow || 'Our story' }}</p>
+            <span class="block mx-auto mt-4 accent-rule"></span>
+            <h1 class="mt-5 text-5xl sm:text-7xl font-semibold tracking-tightest">{{ page?.title || 'About Ulverston Mobile' }}</h1>
+            <p v-if="page?.intro" class="mt-6 max-w-2xl mx-auto text-lg text-ink-600">{{ page.intro }}</p>
         </div>
     </section>
 
@@ -66,19 +69,21 @@ defineProps({
         </div>
     </section>
 
-    <section class="bg-ink-950 text-white">
-        <div class="container-fluid py-24 grid lg:grid-cols-3 gap-10 text-center lg:text-left">
+    <section class="relative overflow-hidden surface-deep">
+        <div class="absolute -top-32 -right-24 h-80 w-80 rounded-full bg-brand-orange-500/25 blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-brand-orange-400/15 blur-3xl"></div>
+        <div class="container-fluid relative py-24 grid lg:grid-cols-3 gap-10 text-center lg:text-left">
             <div>
-                <p class="text-4xl font-semibold tracking-tight">2020</p>
-                <p class="mt-2 text-sm text-ink-300">Founded with a mission for authentic devices.</p>
+                <p class="text-5xl font-semibold tracking-tight text-brand-orange-300">2020</p>
+                <p class="mt-2 text-sm text-white/75">Founded with a mission for authentic devices.</p>
             </div>
             <div>
-                <p class="text-4xl font-semibold tracking-tight">12-month</p>
-                <p class="mt-2 text-sm text-ink-300">Warranty included with every certified repair.</p>
+                <p class="text-5xl font-semibold tracking-tight text-brand-orange-300">12-month</p>
+                <p class="mt-2 text-sm text-white/75">Warranty included with every certified repair.</p>
             </div>
             <div>
-                <p class="text-4xl font-semibold tracking-tight">60-min</p>
-                <p class="mt-2 text-sm text-ink-300">Average turnaround for in-store services.</p>
+                <p class="text-5xl font-semibold tracking-tight text-brand-orange-300">60-min</p>
+                <p class="mt-2 text-sm text-white/75">Average turnaround for in-store services.</p>
             </div>
         </div>
     </section>

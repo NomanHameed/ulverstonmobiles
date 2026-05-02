@@ -43,14 +43,6 @@ function pickColor(color) {
 
 const inquireOpen = ref(false);
 
-function formatPrice(value, currency = props.product.currency) {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 }).format(value);
-}
-
-const displayPrice = computed(() =>
-    activeVariant.value ? activeVariant.value.effective_price : props.product.current_price,
-);
-
 const whatsappLink = computed(() => {
     const number = (page.props.site?.whatsapp || '').replace(/\D/g, '');
     if (!number) return null;
@@ -117,13 +109,7 @@ const stockText = computed(() => {
                 <h1 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">{{ product.name }}</h1>
                 <p v-if="product.short_description" class="mt-4 text-lg text-ink-500">{{ product.short_description }}</p>
 
-                <div class="mt-8 flex items-baseline gap-3">
-                    <p class="text-3xl font-semibold tracking-tight">{{ formatPrice(displayPrice) }}</p>
-                    <p v-if="product.is_on_sale" class="text-base text-ink-400 line-through">
-                        {{ formatPrice(product.base_price) }}
-                    </p>
-                </div>
-                <p class="mt-2 text-sm" :class="product.stock_status === 'in_stock' ? 'text-emerald-600' : 'text-amber-600'">
+                <p class="mt-8 text-sm" :class="product.stock_status === 'in_stock' ? 'text-emerald-600' : 'text-amber-600'">
                     {{ stockText }}
                 </p>
 
@@ -136,7 +122,7 @@ const stockText = computed(() => {
                             type="button"
                             :class="[
                                 'flex items-center gap-2 px-4 py-2 rounded-full border transition',
-                                activeVariant?.color === v.color ? 'border-ink-900 bg-ink-50' : 'border-ink-200 hover:border-ink-400',
+                                activeVariant?.color === v.color ? 'border-brand-blue-600 bg-brand-blue-50' : 'border-ink-200 hover:border-brand-orange-400',
                             ]"
                             @click="pickColor(v.color)"
                         >
@@ -155,12 +141,11 @@ const stockText = computed(() => {
                             type="button"
                             :class="[
                                 'px-5 py-3 rounded-full border text-sm transition',
-                                activeVariantId === v.id ? 'border-ink-900 bg-ink-900 text-white' : 'border-ink-200 hover:border-ink-400',
+                                activeVariantId === v.id ? 'border-brand-blue-600 bg-brand-blue-600 text-white' : 'border-ink-200 hover:border-brand-orange-400',
                             ]"
                             @click="activeVariantId = v.id"
                         >
                             <span class="font-medium">{{ v.storage }}</span>
-                            <span class="ml-2 opacity-70">{{ formatPrice(v.effective_price) }}</span>
                         </button>
                     </div>
                 </div>

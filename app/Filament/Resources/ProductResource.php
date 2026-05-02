@@ -41,7 +41,8 @@ class ProductResource extends Resource
 
                 Forms\Components\Section::make('Pricing')->schema([
                     Forms\Components\TextInput::make('base_price')
-                        ->required()->numeric()->prefix('$')->minValue(0),
+                        ->numeric()->prefix('$')->minValue(0)
+                        ->helperText('Optional — leave empty to hide pricing publicly'),
                     Forms\Components\TextInput::make('sale_price')
                         ->numeric()->prefix('$')->minValue(0)
                         ->helperText('Leave empty for no sale'),

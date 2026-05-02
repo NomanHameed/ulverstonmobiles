@@ -39,7 +39,6 @@ class RepairController extends Controller
                 'slug'              => $i->slug,
                 'description'       => $i->description,
                 'icon'              => $i->icon,
-                'base_price'        => $i->base_price ? (float) $i->base_price : null,
                 'estimated_minutes' => $i->estimated_minutes,
             ]);
 

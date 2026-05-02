@@ -4,10 +4,6 @@ import { Link } from '@inertiajs/vue3';
 defineProps({
     product: { type: Object, required: true },
 });
-
-function formatPrice(value, currency = 'USD') {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 }).format(value);
-}
 </script>
 
 <template>
@@ -29,26 +25,13 @@ function formatPrice(value, currency = 'USD') {
                     <line x1="11" y1="18" x2="13" y2="18" />
                 </svg>
             </div>
-            <span
-                v-if="product.is_on_sale"
-                class="absolute left-4 top-4 rounded-full bg-ink-900 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white"
-            >
-                Save
-            </span>
         </div>
 
-        <div class="mt-4 flex items-start justify-between gap-3">
-            <div class="min-w-0">
-                <p class="text-xs uppercase tracking-[0.2em] text-ink-400">{{ product.brand_name }}</p>
-                <h3 class="mt-1 text-base font-semibold tracking-tight truncate">{{ product.name }}</h3>
-                <p v-if="product.short_description" class="mt-1 text-xs text-ink-500 line-clamp-2">{{ product.short_description }}</p>
-            </div>
-            <div class="text-right">
-                <p class="text-base font-semibold">{{ formatPrice(product.current_price, product.currency) }}</p>
-                <p v-if="product.is_on_sale" class="text-xs text-ink-400 line-through">
-                    {{ formatPrice(product.base_price, product.currency) }}
-                </p>
-            </div>
+        <div class="mt-4">
+            <p class="text-xs uppercase tracking-[0.2em] text-ink-400">{{ product.brand_name }}</p>
+            <h3 class="mt-1 text-base font-semibold tracking-tight truncate">{{ product.name }}</h3>
+            <p v-if="product.short_description" class="mt-1 text-xs text-ink-500 line-clamp-2">{{ product.short_description }}</p>
+            <p class="mt-2 text-xs font-medium text-brand-orange-600 group-hover:text-brand-orange-700 transition">Inquire for price →</p>
         </div>
     </Link>
 </template>

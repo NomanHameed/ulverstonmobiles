@@ -21,10 +21,6 @@ const props = defineProps({
 const page = usePage();
 const site = computed(() => page.props.site || {});
 
-function formatPrice(value, currency = 'GBP') {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 }).format(value);
-}
-
 const mapsEmbed = computed(() => {
     if (!site.value.address) return null;
     const q = encodeURIComponent(site.value.address);
@@ -46,11 +42,12 @@ const mapsEmbed = computed(() => {
     <!-- Trusted By -->
     <section v-if="brands.length" class="container-fluid py-20 border-b border-ink-100">
         <p class="text-center text-xs uppercase tracking-[0.3em] text-brand-orange-500">Trusted by the brands you trust</p>
+        <span class="block mx-auto mt-4 accent-rule"></span>
         <div class="mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-8 items-center">
             <div
                 v-for="b in brands"
                 :key="b.id"
-                class="flex h-16 items-center justify-center rounded-2xl bg-ink-50/60 px-4 transition hover:bg-ink-100"
+                class="group flex h-16 items-center justify-center rounded-2xl bg-brand-blue-50/60 px-4 transition hover:bg-white hover:ring-2 hover:ring-brand-orange-300/60"
             >
                 <img
                     v-if="b.logo_path"
@@ -66,18 +63,20 @@ const mapsEmbed = computed(() => {
     <!-- Book a Phone Repair banner -->
     <section class="container-fluid py-24">
         <div class="grid lg:grid-cols-2 gap-10 items-stretch">
-            <div class="relative aspect-[4/3] lg:aspect-auto rounded-3xl overflow-hidden bg-ink-950">
-                <div class="absolute inset-0 flex items-center justify-center text-white/15">
+            <div class="relative aspect-[4/3] lg:aspect-auto rounded-3xl overflow-hidden surface-deep">
+                <div class="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-brand-orange-500/30 blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-brand-orange-400/20 blur-3xl"></div>
+                <div class="absolute inset-0 flex items-center justify-center text-brand-orange-300/50">
                     <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6">
                         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.7-3.7a6 6 0 0 1-7.9 7.9L6.4 19.6a2.1 2.1 0 0 1-3-3l6.1-7.1a6 6 0 0 1 7.9-7.9L13.7 5.3z"/>
                     </svg>
                 </div>
                 <div class="relative z-10 h-full p-10 lg:p-14 flex flex-col justify-end text-white">
-                    <p class="text-xs uppercase tracking-[0.3em] text-white/60">Repair service</p>
+                    <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-300 font-semibold">Repair service</p>
                     <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest leading-[1]">
                         Book a phone repair.
                     </h2>
-                    <p class="mt-5 max-w-md text-sm text-white/70">
+                    <p class="mt-5 max-w-md text-sm text-white/80">
                         We offer the best quality guarantee for every phone repair we undertake. Certified technicians, manufacturer-grade parts, transparent pricing.
                     </p>
                 </div>
@@ -85,8 +84,9 @@ const mapsEmbed = computed(() => {
 
             <div class="rounded-3xl border border-ink-100 p-10 lg:p-14 flex flex-col justify-between">
                 <div>
-                    <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Save the wait</p>
-                    <h3 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tightest">
+                    <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">Save the wait</p>
+                    <span class="mt-4 block accent-rule"></span>
+                    <h3 class="mt-5 text-3xl sm:text-4xl font-semibold tracking-tightest">
                         Most repairs in 30–60 minutes.
                     </h3>
                     <p class="mt-5 text-ink-500">
@@ -95,15 +95,15 @@ const mapsEmbed = computed(() => {
 
                     <ul class="mt-8 space-y-3 text-sm text-ink-700">
                         <li class="flex items-start gap-3">
-                            <span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-ink-900"></span>
+                            <span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-brand-orange-500"></span>
                             Pre-booking available for same-day service
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-ink-900"></span>
+                            <span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-brand-orange-500"></span>
                             Free initial diagnosis
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-ink-900"></span>
+                            <span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-brand-orange-500"></span>
                             iPhone, Samsung, Pixel, Huawei and more
                         </li>
                     </ul>
@@ -187,7 +187,7 @@ const mapsEmbed = computed(() => {
                 <div
                     :class="[
                         'relative aspect-square rounded-3xl overflow-hidden',
-                        i % 2 === 0 ? 'bg-ink-900 lg:order-2' : 'bg-ink-50 lg:order-1',
+                        i % 2 === 0 ? 'bg-brand-blue-800 lg:order-2' : 'bg-brand-blue-50 lg:order-1',
                     ]"
                 >
                     <img
@@ -214,8 +214,9 @@ const mapsEmbed = computed(() => {
     <section v-if="featured.length" class="container-fluid py-24">
         <div class="flex items-end justify-between mb-10">
             <div>
-                <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Hot products</p>
-                <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">Curated for the everyday extraordinary.</h2>
+                <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">Hot products</p>
+                <span class="mt-4 block accent-rule"></span>
+                <h2 class="mt-5 text-4xl sm:text-5xl font-semibold tracking-tightest">Curated for the everyday extraordinary.</h2>
             </div>
             <Link href="/products" class="hidden sm:inline-flex text-sm font-medium text-brand-orange-600 hover:text-brand-orange-700 transition">
                 Shop all →
@@ -229,8 +230,9 @@ const mapsEmbed = computed(() => {
     <!-- Repair gallery -->
     <section v-if="repairGallery.length" class="container-fluid py-24 border-t border-ink-100">
         <div class="text-center max-w-2xl mx-auto">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Repair workshop</p>
-            <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">A precision bench, for every device.</h2>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">Repair workshop</p>
+            <span class="block mx-auto mt-4 accent-rule"></span>
+            <h2 class="mt-5 text-4xl sm:text-5xl font-semibold tracking-tightest">A precision bench, for every device.</h2>
             <p class="mt-5 text-ink-500">
                 From cracked screens to deep board-level work, every repair runs through a dedicated bench, calibrated tools, and certified technicians.
             </p>
@@ -263,8 +265,9 @@ const mapsEmbed = computed(() => {
     <!-- Store gallery -->
     <section v-if="storeGallery.length" class="container-fluid py-24">
         <div class="text-center max-w-2xl mx-auto">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Store gallery</p>
-            <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">Step inside.</h2>
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">Store gallery</p>
+            <span class="block mx-auto mt-4 accent-rule"></span>
+            <h2 class="mt-5 text-4xl sm:text-5xl font-semibold tracking-tightest">Step inside.</h2>
             <p class="mt-5 text-ink-500">
                 A considered space, designed for an unhurried look at the device that's right for you.
             </p>
@@ -294,22 +297,22 @@ const mapsEmbed = computed(() => {
     <!-- Why us strip -->
     <section class="container-fluid pb-24">
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="rounded-3xl border border-ink-100 p-8">
-                <div class="h-12 w-12 rounded-2xl bg-ink-50 flex items-center justify-center text-ink-700">
+            <div class="group rounded-3xl border border-ink-100 hover:border-brand-orange-300 p-8 transition">
+                <div class="h-12 w-12 rounded-2xl bg-brand-orange-50 text-brand-orange-600 flex items-center justify-center group-hover:bg-brand-orange-500 group-hover:text-white transition">
                     <FeatureIcon name="star" />
                 </div>
                 <h3 class="mt-6 text-xl font-semibold tracking-tight">Genuine, certified parts</h3>
                 <p class="mt-2 text-sm text-ink-500">OEM-grade components, sourced through verified suppliers.</p>
             </div>
-            <div class="rounded-3xl border border-ink-100 p-8">
-                <div class="h-12 w-12 rounded-2xl bg-ink-50 flex items-center justify-center text-ink-700">
+            <div class="group rounded-3xl border border-ink-100 hover:border-brand-blue-300 p-8 transition">
+                <div class="h-12 w-12 rounded-2xl bg-brand-blue-50 text-brand-blue-700 flex items-center justify-center group-hover:bg-brand-blue-600 group-hover:text-white transition">
                     <FeatureIcon name="bolt" />
                 </div>
                 <h3 class="mt-6 text-xl font-semibold tracking-tight">Most repairs in 60 minutes</h3>
                 <p class="mt-2 text-sm text-ink-500">In-store service with technician-grade calibration.</p>
             </div>
-            <div class="rounded-3xl border border-ink-100 p-8">
-                <div class="h-12 w-12 rounded-2xl bg-ink-50 flex items-center justify-center text-ink-700">
+            <div class="group rounded-3xl border border-ink-100 hover:border-brand-orange-300 p-8 transition">
+                <div class="h-12 w-12 rounded-2xl bg-brand-orange-50 text-brand-orange-600 flex items-center justify-center group-hover:bg-brand-orange-500 group-hover:text-white transition">
                     <FeatureIcon name="shield" />
                 </div>
                 <h3 class="mt-6 text-xl font-semibold tracking-tight">12-month warranty</h3>
@@ -319,11 +322,14 @@ const mapsEmbed = computed(() => {
     </section>
 
     <!-- About blurb -->
-    <section v-if="about" class="bg-ink-50 py-24">
-        <div class="container-fluid max-w-3xl text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">{{ about.eyebrow || 'About us' }}</p>
-            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tightest">{{ about.title }}</h2>
-            <p v-if="about.intro" class="mt-6 text-lg text-ink-600">{{ about.intro }}</p>
+    <section v-if="about" class="relative overflow-hidden bg-gradient-to-br from-brand-blue-50 via-white to-brand-orange-50 py-24">
+        <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-orange-200/40 blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-blue-200/50 blur-3xl"></div>
+        <div class="container-fluid max-w-3xl text-center relative">
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">{{ about.eyebrow || 'About us' }}</p>
+            <span class="block mx-auto mt-4 accent-rule"></span>
+            <h2 class="mt-5 text-3xl sm:text-4xl font-semibold tracking-tightest">{{ about.title }}</h2>
+            <p v-if="about.intro" class="mt-6 text-lg text-ink-700">{{ about.intro }}</p>
             <Link href="/about" class="btn-accent mt-8 inline-flex">Read our story</Link>
         </div>
     </section>
@@ -333,8 +339,9 @@ const mapsEmbed = computed(() => {
         <div class="grid lg:grid-cols-2 gap-10 items-stretch">
             <div class="rounded-3xl border border-ink-100 p-10 lg:p-14 flex flex-col justify-between">
                 <div>
-                    <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500">Quick support</p>
-                    <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tightest">Visit, call, or message.</h2>
+                    <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-500 font-semibold">Quick support</p>
+                    <span class="mt-4 block accent-rule"></span>
+                    <h2 class="mt-5 text-3xl sm:text-4xl font-semibold tracking-tightest">Visit, call, or message.</h2>
                     <p class="mt-5 text-ink-500">
                         Drop in for a hands-on look, or reach out and a real person will respond — usually within a few hours.
                     </p>

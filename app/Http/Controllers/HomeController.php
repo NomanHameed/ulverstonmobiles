@@ -37,11 +37,6 @@ class HomeController extends Controller
                 'name'              => $p->name,
                 'slug'              => $p->slug,
                 'short_description' => $p->short_description,
-                'base_price'        => (float) $p->base_price,
-                'sale_price'        => $p->sale_price ? (float) $p->sale_price : null,
-                'current_price'     => $p->current_price,
-                'is_on_sale'        => $p->is_on_sale,
-                'currency'          => $p->currency,
                 'brand_name'        => $p->brand?->name,
                 'primary_image'     => $p->primaryImage?->path,
             ]);
@@ -59,8 +54,6 @@ class HomeController extends Controller
                 'short_description' => $p->short_description,
                 'brand_name'        => $p->brand?->name,
                 'primary_image'     => $p->primaryImage?->path,
-                'current_price'     => $p->current_price,
-                'currency'          => $p->currency,
                 'features'          => $p->features->take(4)->map(fn ($f) => [
                     'id'          => $f->id,
                     'title'       => $f->title,

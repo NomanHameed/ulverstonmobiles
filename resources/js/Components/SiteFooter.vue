@@ -10,8 +10,9 @@ const year = new Date().getFullYear();
 </script>
 
 <template>
-    <footer class="border-t border-ink-100 bg-white mt-24">
-        <div class="container-fluid py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <footer class="relative overflow-hidden border-t border-ink-100 bg-gradient-to-b from-brand-blue-50/40 to-white mt-24">
+        <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-orange-200/30 blur-3xl pointer-events-none"></div>
+        <div class="container-fluid relative py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="col-span-2 md:col-span-1">
                 <Link href="/" :aria-label="appName" class="inline-flex items-center">
                     <img src="/img/logo.png" :alt="appName" class="h-10 w-auto" />
@@ -57,8 +58,9 @@ const year = new Date().getFullYear();
             </div>
         </div>
 
-        <div class="border-t border-ink-100">
-            <div class="container-fluid py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ink-400">
+        <div class="relative border-t border-ink-100 bg-white/60">
+            <span class="block h-1 w-full bg-gradient-to-r from-brand-blue-600 via-brand-orange-500 to-brand-blue-600"></span>
+            <div class="container-fluid py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ink-500">
                 <p>© {{ year }} Elitefone Services Ltd. All rights reserved.</p>
                 <p>Precision repair · Authentic devices</p>
             </div>

@@ -34,8 +34,6 @@ class ProductController extends Controller
         }
 
         match ($sort) {
-            'price_asc'  => $query->orderBy('base_price'),
-            'price_desc' => $query->orderByDesc('base_price'),
             'name'       => $query->orderBy('name'),
             default      => $query->orderByDesc('published_at'),
         };
@@ -45,11 +43,6 @@ class ProductController extends Controller
             'name'              => $p->name,
             'slug'              => $p->slug,
             'short_description' => $p->short_description,
-            'base_price'        => (float) $p->base_price,
-            'sale_price'        => $p->sale_price ? (float) $p->sale_price : null,
-            'current_price'     => $p->current_price,
-            'is_on_sale'        => $p->is_on_sale,
-            'currency'          => $p->currency,
             'brand_name'        => $p->brand?->name,
             'category_name'     => $p->category?->name,
             'primary_image'     => $p->primaryImage?->path,
@@ -87,11 +80,6 @@ class ProductController extends Controller
                 'slug'              => $product->slug,
                 'short_description' => $product->short_description,
                 'description'       => $product->description,
-                'base_price'        => (float) $product->base_price,
-                'sale_price'        => $product->sale_price ? (float) $product->sale_price : null,
-                'current_price'     => $product->current_price,
-                'is_on_sale'        => $product->is_on_sale,
-                'currency'          => $product->currency,
                 'stock_status'      => $product->stock_status,
                 'sku'               => $product->sku,
                 'meta_title'        => $product->meta_title,
@@ -110,7 +98,6 @@ class ProductController extends Controller
                     'color_hex'      => $v->color_hex,
                     'storage'        => $v->storage,
                     'label'          => $v->label,
-                    'effective_price'=> $v->effective_price,
                     'stock'          => $v->stock,
                     'is_default'     => $v->is_default,
                 ]),

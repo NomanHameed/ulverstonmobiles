@@ -42,16 +42,16 @@ onBeforeUnmount(() => {
                 <div class="hidden md:flex items-center gap-1">
                     <button
                         type="button"
-                        class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 transition"
+                        class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-brand-blue-700 transition"
                         @mouseenter="menuOpen = true"
                         @click="menuOpen = !menuOpen"
                     >
                         Shop
                     </button>
-                    <Link href="/repair" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 transition">Repair</Link>
-                    <Link href="/discounts" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 transition">Discounts</Link>
-                    <Link href="/about" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 transition">About</Link>
-                    <Link href="/contact" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 transition">Contact</Link>
+                    <Link href="/repair" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-brand-orange-600 transition">Repair</Link>
+                    <Link href="/discounts" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-brand-blue-700 transition">Discounts</Link>
+                    <Link href="/about" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-brand-blue-700 transition">About</Link>
+                    <Link href="/contact" class="px-3 py-2 text-sm font-medium text-ink-700 hover:text-brand-blue-700 transition">Contact</Link>
                 </div>
 
                 <div class="hidden md:flex items-center gap-2">
@@ -60,15 +60,15 @@ onBeforeUnmount(() => {
                         :href="`https://wa.me/${page.props.site.whatsapp.replace(/\D/g,'')}`"
                         target="_blank"
                         rel="noopener"
-                        class="text-xs uppercase tracking-[0.2em] text-ink-500 hover:text-ink-900 transition"
+                        class="text-xs uppercase tracking-[0.2em] text-ink-500 hover:text-brand-orange-600 transition"
                     >
                         WhatsApp
                     </a>
-                    <Link href="/repair" class="btn-primary text-xs">Book repair</Link>
+                    <Link href="/repair" class="btn-accent text-xs">Book repair</Link>
                 </div>
 
                 <button
-                    class="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full hover:bg-ink-50"
+                    class="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full hover:bg-brand-blue-50"
                     aria-label="Menu"
                     @click="mobileOpen = !mobileOpen"
                 >

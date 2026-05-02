@@ -96,8 +96,6 @@ function clearFilters() {
                         <label class="text-ink-500" for="sort">Sort</label>
                         <select id="sort" v-model="state.sort" class="border-ink-200 rounded-full text-sm focus:border-ink-900 focus:ring-ink-900">
                             <option value="newest">Newest</option>
-                            <option value="price_asc">Price · Low to high</option>
-                            <option value="price_desc">Price · High to low</option>
                             <option value="name">Name</option>
                         </select>
                     </div>
@@ -119,7 +117,7 @@ function clearFilters() {
                         v-html="link.label"
                         :class="[
                             'min-w-[2.5rem] h-10 px-3 inline-flex items-center justify-center rounded-full text-sm transition',
-                            link.active ? 'bg-ink-900 text-white' : 'text-ink-700 hover:bg-ink-50',
+                            link.active ? 'bg-brand-blue-600 text-white' : 'text-ink-700 hover:bg-brand-blue-50',
                             !link.url ? 'opacity-30 pointer-events-none' : '',
                         ]"
                         preserve-scroll

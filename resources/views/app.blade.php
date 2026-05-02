@@ -5,7 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <meta name="theme-color" content="#1e0fb7">
-        <link rel="icon" type="image/png" href="/img/logo.png">
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
+        <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
         <title inertia>{{ config('app.name', 'Ulverston Mobile') }}</title>
 

@@ -37,7 +37,7 @@ const iconMap = {
                         :href="`/products?category=${cat.slug}`"
                         class="group flex items-start gap-4 hover:bg-ink-50 -m-2 p-2 rounded-xl transition"
                     >
-                        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-ink-50 text-ink-700 group-hover:bg-ink-900 group-hover:text-white transition">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-700 group-hover:bg-brand-orange-500 group-hover:text-white transition">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <path :d="iconMap[cat.icon] || iconMap.smartphone" />
                             </svg>
@@ -51,21 +51,22 @@ const iconMap = {
                 </div>
 
                 <div class="mt-12 pt-8 border-t border-ink-100 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Link href="/repair" class="group flex items-center justify-between rounded-2xl bg-ink-900 text-white p-6 hover:bg-ink-700 transition">
-                        <div>
-                            <p class="text-xs uppercase tracking-[0.25em] text-ink-300">Service</p>
+                    <Link href="/repair" class="group relative overflow-hidden flex items-center justify-between rounded-2xl surface-deep p-6 transition">
+                        <div class="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-brand-orange-500/30 blur-2xl"></div>
+                        <div class="relative">
+                            <p class="text-xs uppercase tracking-[0.25em] text-brand-orange-300 font-semibold">Service</p>
                             <p class="mt-2 text-2xl font-semibold">Book a precision repair</p>
-                            <p class="mt-1 text-sm text-ink-300">Most repairs in under 60 minutes.</p>
+                            <p class="mt-1 text-sm text-white/75">Most repairs in under 60 minutes.</p>
                         </div>
-                        <span class="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+                        <span class="relative text-brand-orange-300 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
                     </Link>
-                    <Link href="/products" class="group flex items-center justify-between rounded-2xl border border-ink-200 p-6 hover:border-ink-900 transition">
+                    <Link href="/products" class="group flex items-center justify-between rounded-2xl border border-ink-200 p-6 hover:border-brand-orange-400 hover:bg-brand-orange-50/40 transition">
                         <div>
-                            <p class="text-xs uppercase tracking-[0.25em] text-ink-400">Shop</p>
+                            <p class="text-xs uppercase tracking-[0.25em] text-brand-orange-500 font-semibold">Shop</p>
                             <p class="mt-2 text-2xl font-semibold">All devices</p>
                             <p class="mt-1 text-sm text-ink-500">Authentic, certified, ready to ship.</p>
                         </div>
-                        <span class="opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+                        <span class="text-brand-orange-500 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
                     </Link>
                 </div>
             </div>
