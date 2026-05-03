@@ -22,7 +22,7 @@ class GalleryImageResource extends Resource
     {
         return $form->schema([
             Forms\Components\Select::make('group')
-                ->options(['store' => 'Store', 'workshop' => 'Workshop', 'team' => 'Team'])
+                ->options(['store' => 'Store', 'repair' => 'Repair', 'workshop' => 'Workshop', 'team' => 'Team'])
                 ->default('store')
                 ->required(),
             Forms\Components\FileUpload::make('image_path')->image()->directory('gallery')->required()->columnSpanFull(),
@@ -51,7 +51,7 @@ class GalleryImageResource extends Resource
             ->defaultGroup('group')
             ->filters([
                 Tables\Filters\SelectFilter::make('group')->options([
-                    'store' => 'Store', 'workshop' => 'Workshop', 'team' => 'Team',
+                    'store' => 'Store', 'repair' => 'Repair', 'workshop' => 'Workshop', 'team' => 'Team',
                 ]),
                 Tables\Filters\TernaryFilter::make('is_active'),
             ])

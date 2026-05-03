@@ -64,13 +64,15 @@ const mapsEmbed = computed(() => {
     <section class="container-fluid py-24">
         <div class="grid lg:grid-cols-2 gap-10 items-stretch">
             <div class="relative aspect-[4/3] lg:aspect-auto rounded-3xl overflow-hidden surface-deep">
+                <img
+                    src="/img/repair-banner.png"
+                    alt=""
+                    aria-hidden="true"
+                    class="absolute inset-0 h-full w-full object-cover opacity-55 mix-blend-luminosity"
+                />
+                <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue-900/90 via-brand-blue-800/55 to-brand-blue-700/20"></div>
                 <div class="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-brand-orange-500/30 blur-3xl"></div>
                 <div class="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-brand-orange-400/20 blur-3xl"></div>
-                <div class="absolute inset-0 flex items-center justify-center text-brand-orange-300/50">
-                    <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.7-3.7a6 6 0 0 1-7.9 7.9L6.4 19.6a2.1 2.1 0 0 1-3-3l6.1-7.1a6 6 0 0 1 7.9-7.9L13.7 5.3z"/>
-                    </svg>
-                </div>
                 <div class="relative z-10 h-full p-10 lg:p-14 flex flex-col justify-end text-white">
                     <p class="text-xs uppercase tracking-[0.3em] text-brand-orange-300 font-semibold">Repair service</p>
                     <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest leading-[1]">
