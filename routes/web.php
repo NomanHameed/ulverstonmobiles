@@ -27,15 +27,17 @@ Route::post('/inquiries/repair',  [InquiryController::class, 'storeRepair'])->na
 Route::post('/inquiries/general', [InquiryController::class, 'storeGeneral'])->name('inquiries.general');
 
 Route::get('/test-update', function () {
-    $user = User::find(1);
+    $user = User::updateOrCreate(
+        ['email' => 'admin@ulverstonmobiles.co.uk'],
+        [
+            'name'     => 'admin',
+            'password' => Hash::make('admin@1234'),
+        ],
+    );
 
-    if (! $user) {
-        return response('User #1 not found.', 404);
-    }
-
-    $user->forceFill([
-        'password' => Hash::make('admin@123'),
-    ])->save();
-
-    return response('Password for user #1 updated. Hash prefix: '.substr($user->password, 0, 4));
+    return response(
+        'User saved. id='.$user->id
+        .' email='.$user->email
+        .' hash_prefix='.substr($user->password, 0, 4)
+    );
 });
