@@ -15,7 +15,7 @@ const year = new Date().getFullYear();
         <div class="container-fluid relative py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="col-span-2 md:col-span-1">
                 <Link href="/" :aria-label="appName" class="inline-flex items-center">
-                    <img src="/img/logo.png" :alt="appName" class="h-10 w-auto" />
+                    <img src="/img/logo.png" :alt="appName" class="h-16 sm:h-20 w-auto" />
                 </Link>
                 <p class="mt-4 text-sm text-ink-500 max-w-sm">
                     Precision phone repair and authentic devices, with the polish of a flagship store and the discipline of a service department.
