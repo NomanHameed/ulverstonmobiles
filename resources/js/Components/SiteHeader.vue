@@ -36,7 +36,7 @@ onBeforeUnmount(() => {
         <div class="container-fluid">
             <nav class="flex h-20 items-center justify-between gap-6">
                 <Link href="/" :aria-label="appName" class="flex items-center">
-                    <img src="/img/logo.png" :alt="appName" class="h-12 sm:h-14 w-auto" />
+                    <img src="/img/logo.png" :alt="appName" class="h-14 sm:h-20 w-auto drop-shadow-sm" />
                 </Link>
 
                 <div class="hidden md:flex items-center gap-1">
