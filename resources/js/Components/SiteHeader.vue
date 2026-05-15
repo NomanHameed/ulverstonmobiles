@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
+import { motion } from 'motion-v';
 import MegaMenu from './MegaMenu.vue';
 
 const page = usePage();
@@ -35,8 +36,22 @@ onBeforeUnmount(() => {
     >
         <div class="container-fluid">
             <nav class="flex h-20 items-center justify-between gap-6">
-                <Link href="/" :aria-label="appName" class="flex items-center">
-                    <img src="/img/logo.png" :alt="appName" class="h-14 sm:h-20 w-auto drop-shadow-sm" />
+                <Link href="/" :aria-label="appName" class="flex items-start self-stretch relative z-20 shrink-0 pt-2">
+                    <motion.img
+                        src="/img/logo.png"
+                        :alt="appName"
+                        class="h-16 sm:h-24 md:h-28 w-auto drop-shadow-lg origin-top-left will-change-transform"
+                        :initial="{ opacity: 0, y: -18, scale: 0.85, rotate: -4 }"
+                        :animate="{ opacity: 1, y: [0, -4, 0], scale: 1, rotate: 0 }"
+                        :transition="{
+                            opacity: { duration: 0.6, ease: 'easeOut' },
+                            scale: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                            rotate: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                            y: { delay: 0.7, duration: 3.4, repeat: Infinity, ease: 'easeInOut' },
+                        }"
+                        :whileHover="{ scale: 1.08, rotate: -3, transition: { type: 'spring', stiffness: 320, damping: 14 } }"
+                        :whileTap="{ scale: 0.96, rotate: 0 }"
+                    />
                 </Link>
 
                 <div class="hidden md:flex items-center gap-1">
